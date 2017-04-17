@@ -48,7 +48,7 @@ class ReadBackImages(QtGui.QWidget):
 #        print "update_path:" + path
         if path != "/":
             files.insert(0, "..")
-        print files
+
         for f in files:
             # Create QCustomQWidget
             full_path = os.path.join(self.selecter.getPath(), f)
@@ -85,6 +85,3 @@ class ReadBackImages(QtGui.QWidget):
             image = item.data(0).toPyObject()
             return image
         return None
-
-
-

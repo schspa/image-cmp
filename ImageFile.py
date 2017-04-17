@@ -26,7 +26,7 @@ class ImageFile (QtGui.QWidget):
             color: rgb(0, 0, 255);
         ''')
         self.textDownQLabel.setStyleSheet('''
-            color: rgb(0, 0, 255);
+            color: rgb(221, 34, 34);
         ''')
         self.md5sum = "md5sum"
         self.md5sum_len = 0

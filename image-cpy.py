@@ -79,8 +79,8 @@ class Example(QtGui.QMainWindow):
         self.rootWidget.setLayout(self.rootView)
         self.readbackImages = []
         hbox = QtGui.QHBoxLayout()
-        self.readbackImages.append(ReadBackImages("/home/schspa"))
-        self.readbackImages.append(ReadBackImages("/home"))
+        self.readbackImages.append(ReadBackImages("/"))
+        self.readbackImages.append(ReadBackImages("/"))
         for rbImages in self.readbackImages:
             hbox.addWidget(rbImages)
 
