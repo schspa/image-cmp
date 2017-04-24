@@ -99,6 +99,7 @@ class md5CaculateThread(QtCore.QThread):
         myhash = hashlib.md5()
         f = file(self.filepath, 'rb')
         last_print_time = time.clock()
+        is_blank = True
         while size > 0 and self.is_run:
             current_time = time.clock()
             if current_time - last_print_time > 0.3 :
@@ -112,7 +113,12 @@ class md5CaculateThread(QtCore.QThread):
             if not b:
                 break
             myhash.update(b)
+            if (is_blank and len(b) != b.count("\0")):
+                is_blank = False
         f.close()
-        self.done.emit(myhash.hexdigest())
+        if (is_blank):
+            self.done.emit("blank file")
+        else:
+            self.done.emit(myhash.hexdigest())
     def stop(self):
         self.is_run = False
